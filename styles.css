@@ -67,7 +67,8 @@ button, a { font: inherit; }
   height: calc(100% - 88px - env(safe-area-inset-bottom));
   padding: max(34px, env(safe-area-inset-top)) 18px 8px;
   display: grid;
-  grid-template-rows: auto 52px minmax(0, 1fr) auto;
+  grid-template-rows: auto 52px auto auto;
+  align-content: center;
   gap: 0;
 }
 
@@ -288,7 +289,7 @@ h1 {
   .story {
     height: calc(100% - 78px - env(safe-area-inset-bottom));
     padding-top: max(18px, env(safe-area-inset-top));
-    grid-template-rows: auto 38px minmax(0, 1fr) auto;
+    grid-template-rows: auto 38px auto auto;
   }
 
   .question-connector {
