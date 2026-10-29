@@ -47,6 +47,12 @@ function trackEvent(eventName, parameters = {}) {
   }
 }
 
+function trackMetaEvent(eventName, parameters = {}) {
+  if (typeof window.fbq === "function") {
+    window.fbq("trackCustom", eventName, parameters);
+  }
+}
+
 function render(index, direction = 1, navigationMethod = "initial") {
   current = (index + reviews.length) % reviews.length;
   const review = reviews[current];
@@ -70,11 +76,14 @@ previous.addEventListener("click", () => render(current - 1, -1, "previous_arrow
 next.addEventListener("click", () => render(current + 1, 1, "next_arrow"));
 
 coupangCta.addEventListener("click", () => {
-  trackEvent("coupang_cta_click", {
+  const eventParameters = {
     link_url: coupangCta.href,
     slide_number: current + 1,
     slide_question: reviews[current].question,
-  });
+  };
+
+  trackEvent("coupang_cta_click", eventParameters);
+  trackMetaEvent("CoupangOutboundClick", eventParameters);
 });
 
 document.addEventListener("keydown", (event) => {
