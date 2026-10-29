@@ -28,6 +28,7 @@ const card = document.querySelector("#review-card");
 const dots = document.querySelector("#dots");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
+const coupangCta = document.querySelector("#coupang-cta");
 
 let current = 0;
 
@@ -36,11 +37,17 @@ reviews.forEach((review, index) => {
   dot.type = "button";
   dot.className = "dot";
   dot.setAttribute("aria-label", `${index + 1}번째 후기: ${review.question}`);
-  dot.addEventListener("click", () => render(index, index > current ? 1 : -1));
+  dot.addEventListener("click", () => render(index, index > current ? 1 : -1, "pagination"));
   dots.appendChild(dot);
 });
 
-function render(index, direction = 1) {
+function trackEvent(eventName, parameters = {}) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, parameters);
+  }
+}
+
+function render(index, direction = 1, navigationMethod = "initial") {
   current = (index + reviews.length) % reviews.length;
   const review = reviews[current];
   card.style.setProperty("--shift", `${direction * 14}px`);
@@ -52,14 +59,28 @@ function render(index, direction = 1) {
   currentNumber.textContent = String(current + 1).padStart(2, "0");
   [...dots.children].forEach((dot, dotIndex) => dot.setAttribute("aria-current", dotIndex === current ? "true" : "false"));
   card.classList.add("is-changing");
+  trackEvent("review_slide_view", {
+    slide_number: current + 1,
+    slide_question: review.question,
+    navigation_method: navigationMethod,
+  });
 }
 
-previous.addEventListener("click", () => render(current - 1, -1));
-next.addEventListener("click", () => render(current + 1, 1));
+previous.addEventListener("click", () => render(current - 1, -1, "previous_arrow"));
+next.addEventListener("click", () => render(current + 1, 1, "next_arrow"));
+
+coupangCta.addEventListener("click", () => {
+  trackEvent("coupang_cta_click", {
+    link_url: coupangCta.href,
+    slide_number: current + 1,
+    slide_question: reviews[current].question,
+  });
+});
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft") render(current - 1, -1);
-  if (event.key === "ArrowRight") render(current + 1, 1);
+  if (event.key === "ArrowLeft") render(current - 1, -1, "keyboard_left");
+  if (event.key === "ArrowRight") render(current + 1, 1, "keyboard_right");
 });
 
 render(0);
+
