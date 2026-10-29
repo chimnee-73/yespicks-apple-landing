@@ -305,7 +305,7 @@ h1 {
 
 @media (max-width: 699px) {
   .story { transform: translateY(6px); }
-  .cta-dock { bottom: 128px; }
+  .cta-dock { bottom: clamp(40px, calc(100dvh - 648px), 128px); }
 }
 
 @media (min-width: 700px) {
