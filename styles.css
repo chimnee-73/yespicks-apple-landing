@@ -70,6 +70,7 @@ button, a { font: inherit; }
   grid-template-rows: auto 52px auto auto;
   align-content: center;
   gap: 0;
+  transform: translateY(clamp(12px, 2.5vh, 20px));
 }
 
 .story-heading {
