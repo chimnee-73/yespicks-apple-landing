@@ -121,7 +121,6 @@ h1 {
   position: relative;
   width: min(77%, 330px);
   height: auto;
-  max-height: 100%;
   aspect-ratio: 4 / 5;
   min-height: 0;
   margin: 0 auto;
