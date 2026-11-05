@@ -88,10 +88,10 @@ button, a { font: inherit; }
   content: "";
   position: absolute;
   z-index: 2;
-  right: -4px;
-  bottom: 13px;
-  width: 9px;
-  height: 22px;
+  right: -3px;
+  bottom: 12px;
+  width: 8px;
+  height: 24px;
   background: #fff;
 }
 
@@ -99,7 +99,7 @@ button, a { font: inherit; }
   content: "";
   position: absolute;
   z-index: 3;
-  right: -11px;
+  right: -5px;
   bottom: 9px;
   width: 22px;
   height: 22px;
