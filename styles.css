@@ -76,27 +76,26 @@ button, a { font: inherit; }
   min-width: 0;
   margin-left: auto;
   margin-right: 2px;
-  padding: 12px 26px 17px;
+  padding: 12px 26px 15px;
   text-align: center;
   background: #fff;
-  border: 4px double rgba(28, 28, 28, 0.88);
-  border-radius: 50% 47% 49% 46% / 55% 48% 52% 45%;
+  border: 3px solid rgba(28, 28, 28, 0.88);
+  border-radius: 24px;
   box-shadow: 0 8px 22px rgba(84, 55, 46, 0.06);
-  transform: rotate(0.25deg);
 }
 
 .story-heading::after {
   content: "";
   position: absolute;
-  right: 8%;
-  bottom: -15px;
-  width: 30px;
-  height: 24px;
+  right: 28px;
+  bottom: -12px;
+  width: 22px;
+  height: 22px;
   background: #fff;
   border-right: 3px solid rgba(28, 28, 28, 0.88);
   border-bottom: 3px solid rgba(28, 28, 28, 0.88);
-  border-radius: 0 0 16px 3px;
-  transform: skewX(28deg) rotate(9deg);
+  border-radius: 0 0 3px 0;
+  transform: rotate(45deg);
 }
 
 h1 {
