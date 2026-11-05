@@ -87,14 +87,14 @@ button, a { font: inherit; }
 .story-heading::after {
   content: "";
   position: absolute;
-  right: 28px;
-  bottom: -12px;
+  right: -11px;
+  bottom: 9px;
   width: 22px;
   height: 22px;
   background: #fff;
+  border-top: 3px solid rgba(28, 28, 28, 0.88);
   border-right: 3px solid rgba(28, 28, 28, 0.88);
-  border-bottom: 3px solid rgba(28, 28, 28, 0.88);
-  border-radius: 0 0 3px 0;
+  border-radius: 0 3px 0 0;
   transform: rotate(45deg);
 }
 
