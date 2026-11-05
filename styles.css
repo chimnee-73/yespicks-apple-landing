@@ -84,9 +84,21 @@ button, a { font: inherit; }
   box-shadow: 0 8px 22px rgba(84, 55, 46, 0.06);
 }
 
+.story-heading::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: -4px;
+  bottom: 13px;
+  width: 9px;
+  height: 22px;
+  background: #fff;
+}
+
 .story-heading::after {
   content: "";
   position: absolute;
+  z-index: 3;
   right: -11px;
   bottom: 9px;
   width: 22px;
@@ -106,7 +118,7 @@ h1 {
   overflow: visible;
   color: #262421;
   font-family: "Nanum Pen Script", "Pretendard", sans-serif;
-  font-size: clamp(21px, 5.8vw, 27px);
+  font-size: clamp(22px, 6.1vw, 29px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.035em;
