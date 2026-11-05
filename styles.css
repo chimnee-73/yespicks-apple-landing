@@ -76,38 +76,17 @@ button, a { font: inherit; }
   min-width: 0;
   margin-left: auto;
   margin-right: 2px;
-  padding: 12px 26px 15px;
+  padding: 12px 36px 15px 26px;
   text-align: center;
-  background: #fff;
-  border: 3px solid rgba(28, 28, 28, 0.88);
-  border-radius: 24px;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 70' preserveAspectRatio='none'%3E%3Cpath d='M25 2 H370 Q396 2 396 25 V25 L408 35 L396 45 V45 Q396 68 370 68 H25 Q2 68 2 45 V25 Q2 2 25 2 Z' fill='%23fff' stroke='%232c2c2c' stroke-opacity='.88' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  border: 0;
+  border-radius: 0;
   box-shadow: 0 8px 22px rgba(84, 55, 46, 0.06);
 }
 
-.story-heading::before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  right: -3px;
-  bottom: 12px;
-  width: 8px;
-  height: 24px;
-  background: #fff;
-}
-
+.story-heading::before,
 .story-heading::after {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  right: -5px;
-  bottom: 9px;
-  width: 22px;
-  height: 22px;
-  background: #fff;
-  border-top: 3px solid rgba(28, 28, 28, 0.88);
-  border-right: 3px solid rgba(28, 28, 28, 0.88);
-  border-radius: 0 3px 0 0;
-  transform: rotate(45deg);
+  content: none;
 }
 
 h1 {
