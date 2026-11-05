@@ -62,10 +62,11 @@ button, a { font: inherit; }
 .story {
   height: calc(100% - 88px - env(safe-area-inset-bottom));
   padding: max(34px, env(safe-area-inset-top)) 18px 8px;
-  display: grid;
-  grid-template-rows: auto 14px auto auto;
-  align-content: center;
-  gap: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
   transform: translateY(clamp(4px, 1vh, 10px));
 }
 
@@ -308,7 +309,6 @@ h1 {
   .story {
     height: calc(100% - 78px - env(safe-area-inset-bottom));
     padding-top: max(18px, env(safe-area-inset-top));
-    grid-template-rows: auto 10px auto auto;
   }
 
   .story-footer { min-height: 28px; }
