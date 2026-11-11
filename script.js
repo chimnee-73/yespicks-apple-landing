@@ -94,6 +94,7 @@ coupangCta.addEventListener("click", () => {
     slide_question: reviews[current].question,
   };
 
+  if (window.sendLeadLog) window.sendLeadLog();
   trackEvent("coupang_cta_click", eventParameters);
   trackMetaEvent("CoupangOutboundClick", eventParameters);
 });
